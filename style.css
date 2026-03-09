@@ -1,0 +1,55 @@
+CSS
+body { 
+  margin: 0; padding: 0; background-color: #4a67a1; 
+  font-family: 'Comic Sans MS', cursive, sans-serif; 
+  overflow-y: auto; overflow-x: hidden; 
+}
+
+/* STARS BACKGROUND */
+.stars-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; }
+.star-item { position: absolute; color: #FFFFFF; font-size: 45px; animation: star-float 5s ease-in-out infinite alternate; }
+@keyframes star-float { from { transform: translateY(0) rotate(0deg); } to { transform: translateY(-15px) rotate(15deg); } }
+
+/* SELECT COUNTDOWN */
+.countdown-selector-top { position: absolute; top: 130px; left: 35px; z-index: 100; }
+.select-title { color: white; font-size: 28px; margin: 0; text-shadow: 3px 3px 0 #000; }
+.time-display-box { display: flex; align-items: center; gap: 15px; margin-top: 10px; }
+.time-label { color: white; font-size: 22px; font-weight: bold; }
+#time-select { padding: 6px 12px; font-size: 20px; font-weight: bold; border-radius: 10px; border: 3px solid #000; background: white; cursor: pointer; }
+
+/* LAYOUT */
+.the-cozy-app { display: flex; align-items: center; justify-content: flex-start; min-height: 100vh; padding-top: 120px; padding-left: 50px; }
+.main-layout { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 50px; width: 100%; max-width: 1500px; transform: scale(0.9); transform-origin: left center; }
+
+/* HOUSE & CAMERA */
+.left-section { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 0; position: relative; }
+.roof-wrapper { position: relative; width: 766px; height: 215px; margin-bottom: -8px; z-index: 10; }
+.roof-triangle { width: 0; height: 0; border-left: 383px solid transparent; border-right: 383px solid transparent; border-bottom: 215px solid #003380; position: absolute; bottom: 0; }
+.house-container { position: relative; width: 750px; aspect-ratio: 4 / 3; border: 8px solid #000; background-color: #000; box-shadow: 0 20px 45px rgba(0,0,0,0.45); border-radius: 0 0 15px 15px; overflow: hidden; z-index: 5; }
+#video, #photo-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scaleX(-1); object-fit: cover; z-index: 1; }
+#photo-canvas { z-index: 5; display: none; transform: none; }
+#countdown-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 130px; color: white; z-index: 100; text-shadow: 4px 4px 10px rgba(0,0,0,0.8); }
+
+/* RIGHT PANEL (Balanced) */
+.right-section { flex: 1; display: flex; justify-content: flex-start; margin-top: 100px; }
+.side-controls { display: flex; flex-direction: column; align-items: center; width: 400px; gap: 35px; }
+
+/* BUTTONS EFFECT */
+.mode-switch { display: flex; gap: 15px; width: 100%; }
+.mode-btn { flex: 1; padding: 15px 0; font-size: 22px; font-weight: bold; border-radius: 12px; border: 3px solid white; background: transparent; color: white; cursor: pointer; transition: all 0.3s ease; }
+.mode-btn.active { background: white; color: #4a67a1; }
+.mode-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+.filter-group { width: 100%; text-align: center; margin-top: 10px; }
+.filter-label { color: #FFFFFF; font-size: 24px; font-weight: bold; margin-bottom: 25px; display: block; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.filter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; }
+.filter-btn { background: transparent; border: 2px solid #fff; border-radius: 10px; color: #fff; padding: 12px 5px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+.filter-btn:hover { transform: translateY(-3px) scale(1.05); }
+
+.capsule-btn { background: #ffffff !important; color: #4a67a1 !important; padding: 22px 0 !important; font-size: 26px !important; border-radius: 100px !important; width: 100% !important; border: none !important; cursor: pointer; transition: 0.3s ease !important; }
+.capsule-btn:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.4) !important; }
+
+.reset-link-only { background: transparent; border: none; color: white; font-size: 20px; text-decoration: underline; cursor: pointer; margin-top: 10px; }
+
+/* ADJUSTER */
+.image-adjuster { background: rgba(255, 255, 255, 0.1); padding: 12px; border-radiu
